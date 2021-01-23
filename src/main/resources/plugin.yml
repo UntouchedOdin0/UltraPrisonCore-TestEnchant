@@ -1,0 +1,8 @@
+name: UltraPrisonTestEnchant
+version: 1.0
+main: me.drawethree.ultraprisontestenchant.UltraPrisonTestEnchant
+api-version: 1.13
+depend: [UltraPrisonCore]
+authors: [Drawethree]
+description: Developer example how to create and hook custom enchants into UltraPrisonCore
+website: https://github.com/Drawethree/UltraPrisonCore
