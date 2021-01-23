@@ -34,7 +34,6 @@ public final class UltraPrisonTestEnchant extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        //Please unregister the enchant when disabling your plugin.
-        this.enchant.unregister();
+        //You do not have to unregister the enchant. UltraPrisonCore will handle that for you :)
     }
 }
