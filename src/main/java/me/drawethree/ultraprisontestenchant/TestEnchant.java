@@ -23,7 +23,7 @@ public class TestEnchant extends UltraPrisonEnchantment {
      * Please make sure that enchants.yml config in UltraPrisonCore (not in this plugin) has this enchant properties in config!
      */
     public TestEnchant() {
-        super(UltraPrisonEnchants.getInstance(), -1);
+        super(UltraPrisonEnchants.getInstance(), 99);
         this.chance = this.plugin.getConfig().get().getDouble("enchants." + id + ".Chance");
     }
 
