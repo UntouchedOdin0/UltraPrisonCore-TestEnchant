@@ -16,7 +16,7 @@ public class TestEnchant extends UltraPrisonEnchantment {
     /**
      * Class attribute chance - Represent the chance of triggering the enchant
      */
-    private final double chance;
+    private double chance;
 
     /**
      * Constructor of your custom enchant. You can load any parameters after calling super() constructors. Make sure to include unique id!
@@ -63,6 +63,14 @@ public class TestEnchant extends UltraPrisonEnchantment {
         if (this.chance * enchantLevel >= ThreadLocalRandom.current().nextDouble(100)) {
             e.getPlayer().sendMessage("You have triggered the enchant!");
         }
+    }
+
+    /**
+     * This method is called when UltraPrisonCore is reloaded, it should reload every needed attribute from config.
+     */
+    @Override
+    public void reload() {
+        this.chance = this.plugin.getConfig().get().getDouble("enchants." + id + ".Chance");
     }
 
     /**
