@@ -24,7 +24,7 @@ public class TestEnchant extends UltraPrisonEnchantment {
      */
     public TestEnchant() {
         super(UltraPrisonEnchants.getInstance(), 99);
-        this.chance = this.plugin.getEnchantsConfig().getYamlConfig().getDouble("enchants." + id + ".Chance");
+        this.chance = plugin.getEnchantsConfig().getYamlConfig().getDouble("enchants." + id + ".Chance");
     }
 
     /**
@@ -70,7 +70,7 @@ public class TestEnchant extends UltraPrisonEnchantment {
      */
     @Override
     public void reload() {
-        this.chance = this.plugin.getEnchantsConfig().getYamlConfig().getDouble("enchants." + id + ".Chance");
+        this.chance = plugin.getEnchantsConfig().getYamlConfig().getDouble("enchants." + id + ".Chance");
     }
 
     /**
