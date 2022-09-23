@@ -1,5 +1,7 @@
 package me.drawethree.ultraprisontestenchant;
 
+import dev.drawethree.ultraprisoncore.UltraPrisonCore;
+import dev.drawethree.ultraprisoncore.enchants.api.UltraPrisonEnchantsAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -9,6 +11,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class UltraPrisonTestEnchant extends JavaPlugin {
 
     private TestEnchant enchant;
+
+    private UltraPrisonEnchantsAPI api;
 
     @Override
     public void onEnable() {
@@ -25,8 +29,10 @@ public final class UltraPrisonTestEnchant extends JavaPlugin {
         //Create our custom enchant
         this.enchant = new TestEnchant();
 
+        this.api = UltraPrisonCore.getInstance().getEnchants().getApi();
+
         //Register it
-        this.enchant.register();
+        this.api.registerEnchant(this.enchant);
 
         //You are done. Have fun with your custom enchants! :)
 
@@ -34,6 +40,7 @@ public final class UltraPrisonTestEnchant extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        //You do not have to unregister the enchant. UltraPrisonCore will handle that for you :)
+        // Unregistering of enchant. Not needed, but good to have.
+        this.api.unregisterEnchant(this.enchant);
     }
 }

@@ -1,7 +1,7 @@
 package me.drawethree.ultraprisontestenchant;
 
-import me.drawethree.ultraprisoncore.enchants.UltraPrisonEnchants;
-import me.drawethree.ultraprisoncore.enchants.enchants.UltraPrisonEnchantment;
+import dev.drawethree.ultraprisoncore.enchants.UltraPrisonEnchants;
+import dev.drawethree.ultraprisoncore.enchants.model.UltraPrisonEnchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
@@ -24,7 +24,7 @@ public class TestEnchant extends UltraPrisonEnchantment {
      */
     public TestEnchant() {
         super(UltraPrisonEnchants.getInstance(), 99);
-        this.chance = this.plugin.getConfig().get().getDouble("enchants." + id + ".Chance");
+        this.chance = this.plugin.getEnchantsConfig().getYamlConfig().getDouble("enchants." + id + ".Chance");
     }
 
     /**
@@ -70,7 +70,7 @@ public class TestEnchant extends UltraPrisonEnchantment {
      */
     @Override
     public void reload() {
-        this.chance = this.plugin.getConfig().get().getDouble("enchants." + id + ".Chance");
+        this.chance = this.plugin.getEnchantsConfig().getYamlConfig().getDouble("enchants." + id + ".Chance");
     }
 
     /**
